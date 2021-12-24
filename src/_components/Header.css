@@ -1,12 +1,3 @@
-.site-brand-logo {
-  background-image: url("../_assets/elephant_logo1.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 90px;
-  height: 90px;
-}
-
 .main-menu-icon {
   margin-left: 3.2rem;
   font-size: 3.2rem;
