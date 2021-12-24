@@ -5,6 +5,7 @@ import React, { useState } from "react";
 
 import { BsEnvelopeFill } from "react-icons/bs";
 import { CgMenuGridR } from "react-icons/cg";
+import logo from "../_assets/elephant_logo.png";
 import styled from "styled-components";
 
 const Header = () => {
@@ -31,12 +32,28 @@ const Header = () => {
     }
   `;
 
+  const SiteBrandLogo = styled.div`
+    background-image: url(${logo});
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 90px;
+    height: 90px;
+  `;
+
+  const SiteBrandText = styled.p`
+    margin-left: -1.6rem;
+    font-weight: 900;
+    text-transform: uppercase;
+  `;
+
   const [searchBarActive, setSearchBarActive] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <PageHeader>
       <SiteBrand>
-        <div className="site-brand-logo"></div>
-        <h1 className="site-brand-text">Dependent Elephant</h1>
+        <SiteBrandLogo></SiteBrandLogo>
+        <SiteBrandText>Dependent Elephant</SiteBrandText>
       </SiteBrand>
       <div
         className="search-bar-cont"
@@ -49,8 +66,8 @@ const Header = () => {
       </div>
       <HeaderIcons>
         <FaSearch onClick={() => setSearchBarActive(!searchBarActive)} />
-        <FaBell />
-        <BsEnvelopeFill />
+        <FaBell style={{ display: isLoggedIn ? "block" : "none" }} />
+        <BsEnvelopeFill style={{ display: isLoggedIn ? "block" : "none" }} />
         <FaUserAlt />
         {/* <CgMenuGridR className="main-menu-icon" /> */}
       </HeaderIcons>
