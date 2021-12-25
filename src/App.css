@@ -11,7 +11,9 @@ h3 {
 }
 
 p,
-nav {
+nav,
+label,
+input {
   font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
 }
 
@@ -22,4 +24,15 @@ nav {
 
 .chevrons {
   margin: 2rem 0;
+}
+
+.btn {
+  font-size: 1.6rem;
+  min-width: 10rem;
+  max-width: 10rem;
+  padding: 0.4rem 0.8rem;
+}
+
+.btn:hover {
+  cursor: pointer;
 }

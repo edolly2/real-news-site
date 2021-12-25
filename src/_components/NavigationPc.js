@@ -93,45 +93,21 @@ const NavigationPc = (props) => {
           />
         </SideBarToggle>
         <SideBarNavList>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/latest">Latest</Link>
-          </li>
-          <li>
-            <Link to="/politics">Politics</Link>
-          </li>
-          <li>
-            <Link to="/national_news">National News</Link>
-          </li>
-          <li>
-            <Link to="/china">China</Link>
-          </li>
-          <li>
-            <Link to="/russia">Russia</Link>
-          </li>
-          <li>
-            <Link to="/biden">Biden</Link>
-          </li>
-          <li>
-            <Link to="/suppressed_news">Suppressed News</Link>
-          </li>
-          <li>
-            <Link to="/unbelievable">Unbelievable</Link>
-          </li>
-          <li>
-            <Link to="/hypocrisy">Hypocrisy</Link>
-          </li>
-          <li>
-            <Link to="/fact_check">Fact Check</Link>
-          </li>
-          <li>
-            <Link to="/archives">Archives</Link>
-          </li>
+          <li>Home</li>
+          <li>Latest</li>
+          <li>Politics</li>
+          <li>National News</li>
+          <li>China</li>
+          <li>Russia</li>
+          <li>Biden</li>
+          <li>Suppressed News</li>
+          <li>Unbelievable</li>
+          <li>Hypocrisy</li>
+          <li>Fact Check</li>
+          <li>Archives</li>
         </SideBarNavList>
       </SideBarNav>
-      <Route exact path="/">
+      {/* <Route exact path="/">
         <HomePage />
       </Route>
       <Route path="/archives">
@@ -166,7 +142,7 @@ const NavigationPc = (props) => {
       </Route>
       <Route path="/unbelievable">
         <UnbelievablePage />
-      </Route>
+      </Route> */}
     </SideBarMenu>
   );
 };
