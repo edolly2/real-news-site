@@ -86,7 +86,7 @@ const Header = (props) => {
         <FaSearch onClick={() => setSearchBarActive(!searchBarActive)} />
         <FaBell style={props.bellStyle} />
         <BsEnvelopeFill style={props.envelopeStyle} />
-        <FaUserAlt />
+        <FaUserAlt onClick={props.userIconClick} />
         {/* <MainMenuIcon>
           <CgMenuGridR />
         </MainMenuIcon> */}

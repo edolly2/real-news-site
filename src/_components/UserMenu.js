@@ -6,13 +6,19 @@ const UserMenuContainer = styled.aside`
   width: 20rem;
   height: 40rem;
   margin-left: auto;
-  padding: 1.6rem;
   position: relative;
+  padding: 1.6rem;
+  transition: all 500ms linear;
   & nav {
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
     margin-bottom: 1.6rem;
+  }
+  & li:hover {
+    cursor: pointer;
+    background-color: black;
+    color: red;
   }
 `;
 const ProfileImageContainer = styled.div`
@@ -31,30 +37,52 @@ const FormContainer = styled.div`
   position: absolute;
   bottom: 1.6rem;
   right: 1.6rem;
+  left: 1.6rem;
   background-color: brown;
   & form {
     text-align: center;
   }
 `;
-const UserMenu = () => {
+const UserMenu = (props) => {
   return (
-    <UserMenuContainer>
+    <UserMenuContainer style={props.userMenuStyle}>
       <ProfileImageContainer>
         <FaUserCircle />
-        <p>Not signed in</p>
+        <p>{props.signedInTextValue}</p>
       </ProfileImageContainer>
       <nav>
         <ul>
-          <li>Login</li>
-          <li>Sign-up</li>
+          <li
+            onClick={props.logInMenuItemClick}
+            style={props.logInMenuItemStyle}
+          >
+            Log-In
+          </li>
+
+          <li
+            onClick={props.signUpMenuItemClick}
+            style={props.signUpMenuItemStyle}
+          >
+            Sign-Up
+          </li>
+
           <li>Donate</li>
+
+          <li
+            onClick={props.logOutMenuItemClick}
+            style={props.logOutMenuItemStyle}
+          >
+            Log-Out
+          </li>
         </ul>
       </nav>
       <FormContainer>
-        <form>
-          <label htmlFor="subscribe">Want our newsletter?</label>
-          <input type="email" name="subscribe" />
-          <button className="btn">Subscribe</button>
+        <form id="subscribe-form">
+          <label htmlFor="subscribe">Get our newsletter!</label>
+          <input type="email" name="subscribe" placeholder="E-mail" />
+          <button className="btn" onClick={props.subscribeBtnClick}>
+            Subscribe
+          </button>
         </form>
       </FormContainer>
     </UserMenuContainer>

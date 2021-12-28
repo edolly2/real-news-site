@@ -44,7 +44,7 @@ const LoginFormBtnGroup = styled.div`
 `;
 const Login = (props) => {
   return (
-    <LoginContainer style={props.loginModalStyle}>
+    <LoginContainer style={props.logInModalStyle}>
       <LoginForm>
         <h2>Login</h2>
         <LoginFormInputGroup>
@@ -61,14 +61,14 @@ const Login = (props) => {
           <button
             type="button"
             className="btn"
-            onClick={props.loginSubmitClick}
+            onClick={props.logInSubmitClick}
           >
             Login
           </button>
           <button
             type="button"
             className="btn"
-            onClick={props.loginCancelClick}
+            onClick={props.logInCancelClick}
           >
             Cancel
           </button>

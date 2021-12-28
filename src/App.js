@@ -10,40 +10,66 @@ import UserMenu from "./_components/UserMenu";
 const App = () => {
   const [sideBarMenuActive, setSideBarMenuActive] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [loginModalActive, setLoginModalActive] = useState(false);
+  const [logInModalActive, setLogInModalActive] = useState(false);
+  const [userMenuActive, setUserMenuActive] = useState(false);
+  // const [signedInText, setSignedInText] = useState("");
+  const [subscribedValue, setSubscribedValue] = useState("");
   return (
     <div className="App">
       <Header
         bellStyle={{ display: isLoggedIn ? "block" : "none" }}
         envelopeStyle={{ display: isLoggedIn ? "block" : "none" }}
-      />
-      <UserMenu />
-      <Login
-        loginModalStyle={{ display: loginModalActive ? "block" : "none" }}
-        loginCancelClick={() => {
-          setLoginModalActive(false);
+        userIconClick={() => {
+          setUserMenuActive(!userMenuActive);
+          setSideBarMenuActive(false);
         }}
-        loginSubmitClick={() => {
-          setLoginModalActive(false);
+      />
+      <UserMenu
+        // userMenuStyle={{ display: userMenuActive ? "block" : "none" }}
+        userMenuStyle={{ marginRight: userMenuActive ? "0" : "-20rem" }}
+        logInMenuItemClick={() => {
+          setLogInModalActive(!logInModalActive);
+          setUserMenuActive(!userMenuActive);
+        }}
+        logOutMenuItemClick={() => {
+          // setLoginModalActive(!loginModalActive);
+          setUserMenuActive(!userMenuActive);
+          setIsLoggedIn(!isLoggedIn);
+        }}
+        logInMenuItemStyle={{ display: isLoggedIn ? "none" : "block" }}
+        signUpMenuItemStyle={{ display: isLoggedIn ? "none" : "block" }}
+        logOutMenuItemStyle={{ display: isLoggedIn ? "block" : "none" }}
+        signedInTextValue={isLoggedIn ? "User is logged in" : "Not signed in"}
+        subscribeBtnClick={() => {
+          setSubscribedValue(subscribedValue.val());
+          console.log(subscribedValue);
+        }}
+      />
+      <Login
+        logInModalStyle={{ display: logInModalActive ? "block" : "none" }}
+        logInCancelClick={() => {
+          setLogInModalActive(false);
+          setUserMenuActive(!userMenuActive);
+        }}
+        logInSubmitClick={() => {
+          setLogInModalActive(false);
           setIsLoggedIn(true);
         }}
       />
       <NavigationPc
         sideBarMenuToggle={() => {
           setSideBarMenuActive(!sideBarMenuActive);
+          setLogInModalActive(false);
+          setUserMenuActive(false);
         }}
         sideBarMenuStyle={{ left: sideBarMenuActive ? "0" : "-25vw" }}
         chevronLeftStyle={{ display: sideBarMenuActive ? "block" : "none" }}
         chevronRightStyle={{ display: sideBarMenuActive ? "none" : "block" }}
       />
       <main>
-        <button
-          onClick={() => {
-            setLoginModalActive(true);
-          }}
-        >
-          login
-        </button>
+        {/* userIconClick={() => {
+          setLoginModalActive(!loginModalActive);
+        }} */}
       </main>
     </div>
   );
