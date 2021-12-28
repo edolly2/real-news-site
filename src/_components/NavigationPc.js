@@ -1,5 +1,3 @@
-import "./NavigationPc.css";
-
 import { BsChevronDoubleLeft, BsChevronDoubleRight } from "react-icons/bs";
 import { Link, Route, Switch } from "react-router-dom";
 

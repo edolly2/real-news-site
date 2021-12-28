@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import Header from "./_components/Header";
 import Login from "./_components/Login";
 import NavigationPc from "./_components/NavigationPc";
+import UserMenu from "./_components/UserMenu";
 
 const App = () => {
   const [sideBarMenuActive, setSideBarMenuActive] = useState(false);
@@ -16,6 +17,7 @@ const App = () => {
         bellStyle={{ display: isLoggedIn ? "block" : "none" }}
         envelopeStyle={{ display: isLoggedIn ? "block" : "none" }}
       />
+      <UserMenu />
       <Login
         loginModalStyle={{ display: loginModalActive ? "block" : "none" }}
         loginCancelClick={() => {

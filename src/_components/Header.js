@@ -1,5 +1,3 @@
-import "./Header.css";
-
 import { FaBell, FaSearch, FaUserAlt } from "react-icons/fa";
 import React, { useState } from "react";
 
@@ -14,6 +12,7 @@ const PageHeader = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  position: relative;
 `;
 
 const SiteBrand = styled.div`
