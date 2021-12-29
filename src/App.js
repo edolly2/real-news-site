@@ -8,12 +8,15 @@ import NavigationPc from "./_components/NavigationPc";
 import UserMenu from "./_components/UserMenu";
 
 const App = () => {
+  // let inputValue = document.getElementById("login-email").value;
+
   const [sideBarMenuActive, setSideBarMenuActive] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [logInModalActive, setLogInModalActive] = useState(false);
   const [userMenuActive, setUserMenuActive] = useState(false);
   // const [signedInText, setSignedInText] = useState("");
-  const [subscribedValue, setSubscribedValue] = useState("");
+  // const [subscribedValue, setSubscribedValue] = useState("");
+  // const [emailInputValue, setEmailInputValue] = useState("");
   return (
     <div className="App">
       <Header
@@ -39,10 +42,12 @@ const App = () => {
         logInMenuItemStyle={{ display: isLoggedIn ? "none" : "block" }}
         signUpMenuItemStyle={{ display: isLoggedIn ? "none" : "block" }}
         logOutMenuItemStyle={{ display: isLoggedIn ? "block" : "none" }}
-        signedInTextValue={isLoggedIn ? "User is logged in" : "Not signed in"}
+        signedInTextValue={
+          isLoggedIn ? /*{ inputValue }*/ +" is logged in" : "Not signed in"
+        }
         subscribeBtnClick={() => {
-          setSubscribedValue(subscribedValue.val());
-          console.log(subscribedValue);
+          // setSubscribedValue(subscribedValue.val());
+          // console.log(subscribedValue);
         }}
       />
       <Login
@@ -55,6 +60,9 @@ const App = () => {
           setLogInModalActive(false);
           setIsLoggedIn(true);
         }}
+        // logInEmailId="login-email"
+        // logInEmailValue={emailInputValue}
+        // onLogInEmailChange={(e) => setEmailInputValue(e.target.value)}
       />
       <NavigationPc
         sideBarMenuToggle={() => {
