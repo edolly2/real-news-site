@@ -5,8 +5,8 @@ const UserMenuContainer = styled.aside`
   background-color: red;
   width: 20rem;
   height: 40rem;
-  margin-left: auto;
-  position: relative;
+  position: absolute;
+  right: 0;
   padding: 1.6rem;
   transition: all 500ms linear;
   & nav {

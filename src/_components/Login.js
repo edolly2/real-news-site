@@ -49,13 +49,7 @@ const Login = (props) => {
         <h2>Login</h2>
         <LoginFormInputGroup>
           <label htmlFor="login-email">Email</label>
-          <input
-            type="email"
-            name="login-email"
-            id={props.logInEmailId}
-            value=""
-            // onChange={props.onLogInEmailChange}
-          />
+          <input type="email" name="login-email" id={props.logInEmailId} />
           <label htmlFor="login-password">Password</label>
           <input type="password" name="login-password" id="login-password" />
         </LoginFormInputGroup>

@@ -1,24 +1,11 @@
 import { BsChevronDoubleLeft, BsChevronDoubleRight } from "react-icons/bs";
-import { Link, Route, Switch } from "react-router-dom";
 
-import ArchivesPage from "../_pages/ArchivesPage";
-import BidenPage from "../_pages/BidenPage";
-import ChinaPage from "../_pages/ChinaPage";
-import FactCheckPage from "../_pages/FactCheckPage";
-import HomePage from "../_pages/HomePage";
-import HypocrisyPage from "../_pages/HypocrisyPage";
-import LatestPage from "../_pages/LatestPage";
-import NationalNewsPage from "../_pages/NationalNewsPage";
-import PoliticsPage from "../_pages/PoliticsPage";
-import RussiaPage from "../_pages/RussiaPage";
-import SuppressedNewsPage from "../_pages/SuppressedNewsPage";
-import UnbelievablePage from "../_pages/UnbelievablePage";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const SideBarMenu = styled.aside`
   width: 25vw;
   height: 100%;
-  background-color: blue;
   position: absolute;
   top: 0;
   left: 0;
@@ -28,8 +15,12 @@ const SideBarMenu = styled.aside`
 const SideBarNav = styled.nav`
   width: 100%;
   height: 100%;
-  background-color: green;
-  position: relative;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: 2px solid rgb(0, 0, 0);
+  border-left: none;
+  backdrop-filter: blur(10px);
+  // position: relative;
 `;
 
 const SideBarNavList = styled.ul`
@@ -52,9 +43,13 @@ const SideBarNavList = styled.ul`
 `;
 
 const SideBarToggle = styled.div`
-  background-color: teal;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: 2px solid rgb(0, 0, 0);
+  border-left: 2px solid #4c4c4c;
+  // backdrop-filter: blur(10px);
   position: absolute;
-  left: 25vw;
+  left: calc(25vw - 3px);
   top: 50%;
   transform: translate(0, -50%);
   width: 3.2rem;
@@ -63,6 +58,8 @@ const SideBarToggle = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  border-top-right-radius: 0.6rem;
+  border-bottom-right-radius: 0.6rem;
 `;
 
 const SideBarTitle = styled.h2`
@@ -91,56 +88,44 @@ const NavigationPc = (props) => {
           />
         </SideBarToggle>
         <SideBarNavList>
-          <li>Home</li>
-          <li>Latest</li>
-          <li>Politics</li>
-          <li>National News</li>
-          <li>China</li>
-          <li>Russia</li>
-          <li>Biden</li>
-          <li>Suppressed News</li>
-          <li>Unbelievable</li>
-          <li>Hypocrisy</li>
-          <li>Fact Check</li>
-          <li>Archives</li>
+          <Link className="Links" exact to="/">
+            <li>Home</li>
+          </Link>
+          <Link className="Links" to="/latest">
+            <li>Latest News</li>
+          </Link>
+          <Link className="Links" to="/politics">
+            <li>Politics</li>
+          </Link>
+          <Link className="Links" to="/national-news">
+            <li>National News</li>
+          </Link>
+          <Link className="Links" to="/china">
+            <li>China News</li>
+          </Link>
+          <Link className="Links" to="/russia">
+            <li>Russia News</li>
+          </Link>
+          <Link className="Links" to="/biden">
+            <li>Biden News</li>
+          </Link>
+          <Link className="Links" to="/suppressed-news">
+            <li>Suppressed News</li>
+          </Link>
+          <Link className="Links" to="/unbelievable">
+            <li>Unbelievable News</li>
+          </Link>
+          <Link className="Links" to="/hypocrisy">
+            <li>Hypocrisy</li>
+          </Link>
+          <Link className="Links" to="/fact-check">
+            <li>Fact Check</li>
+          </Link>
+          <Link className="Links" to="/archives">
+            <li>Archives</li>
+          </Link>
         </SideBarNavList>
       </SideBarNav>
-      {/* <Route exact path="/">
-        <HomePage />
-      </Route>
-      <Route path="/archives">
-        <ArchivesPage />
-      </Route>
-      <Route path="/biden">
-        <BidenPage />
-      </Route>
-      <Route path="/china">
-        <ChinaPage />
-      </Route>
-      <Route path="/fact_check">
-        <FactCheckPage />
-      </Route>
-      <Route path="/hypocrisy">
-        <HypocrisyPage />
-      </Route>
-      <Route path="/latest">
-        <LatestPage />
-      </Route>
-      <Route path="/national_news">
-        <NationalNewsPage />
-      </Route>
-      <Route path="/politics">
-        <PoliticsPage />
-      </Route>
-      <Route path="/russia">
-        <RussiaPage />
-      </Route>
-      <Route path="/suppressed_news">
-        <SuppressedNewsPage />
-      </Route>
-      <Route path="/unbelievable">
-        <UnbelievablePage />
-      </Route> */}
     </SideBarMenu>
   );
 };
