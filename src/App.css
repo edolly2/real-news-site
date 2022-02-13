@@ -18,7 +18,8 @@ h3 {
 p,
 nav,
 label,
-input {
+input,
+.date {
   font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
 }
 
@@ -51,4 +52,21 @@ input {
   width: 100%;
   text-decoration: none;
   color: white;
+}
+
+.date {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.active {
+  color: red;
+}
+
+.thumbs-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1.6rem 0;
 }

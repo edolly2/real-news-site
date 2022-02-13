@@ -13,6 +13,9 @@ const PageHeader = styled.header`
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
 `;
 
 const SiteBrand = styled.div`
@@ -65,6 +68,15 @@ const SearchBarContainer = styled.div`
 //   font-size: 3.2rem;
 //   background-color: red;
 // `;
+function getCurrentDate() {
+  let myCurrentDate = new Date();
+  let date = myCurrentDate.getDate();
+  let month = myCurrentDate.getMonth() + 1;
+  let year = myCurrentDate.getFullYear();
+
+  return `${month}/${date}/${year}`;
+}
+
 const Header = (props) => {
   const [searchBarActive, setSearchBarActive] = useState(false);
 
@@ -82,6 +94,7 @@ const Header = (props) => {
           Search
         </button>
       </SearchBarContainer>
+      <div className="date">{getCurrentDate()}</div>
       <HeaderIcons>
         <FaSearch onClick={() => setSearchBarActive(!searchBarActive)} />
         <FaBell style={props.bellStyle} />

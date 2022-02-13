@@ -5,20 +5,16 @@ import React, { useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 import ArchivesPage from "./_pages/ArchivesPage";
-import BidenPage from "./_pages/BidenPage";
-import ChinaPage from "./_pages/ChinaPage";
 import FactCheckPage from "./_pages/FactCheckPage";
 import Header from "./_components/Header";
 import HomePage from "./_pages/HomePage";
-import HypocrisyPage from "./_pages/HypocrisyPage";
+import InternationalNewsPage from "./_pages/InternationalNewsPage";
 import LatestPage from "./_pages/LatestPage";
 import Login from "./_components/Login";
 import NationalNewsPage from "./_pages/NationalNewsPage";
 import NavigationPc from "./_components/NavigationPc";
-import PoliticsPage from "./_pages/PoliticsPage";
-import RussiaPage from "./_pages/RussiaPage";
-import SuppressedNewsPage from "./_pages/SuppressedNewsPage";
-import UnbelievablePage from "./_pages/UnbelievablePage";
+import NewsModule from "./_components/NewsModule";
+import NewsThumbs from "./_components/NewsThumbs";
 import UserMenu from "./_components/UserMenu";
 import jsonServerProvider from "ra-data-json-server";
 
@@ -99,17 +95,16 @@ const App = () => {
           <Routes>
             <Route path="/" exact element={<HomePage />} />
             <Route path="/archives" element={<ArchivesPage />} />
-            <Route path="/biden" element={<BidenPage />} />
-            <Route path="/china" element={<ChinaPage />} />
             <Route path="/fact-check" element={<FactCheckPage />} />
-            <Route path="/hypocrisy" element={<HypocrisyPage />} />
             <Route path="/latest" element={<LatestPage />} />
             <Route path="/national-news" element={<NationalNewsPage />} />
-            <Route path="/politics" element={<PoliticsPage />} />
-            <Route path="/russia" element={<RussiaPage />} />
-            <Route path="/suppressed-news" element={<SuppressedNewsPage />} />
-            <Route path="/unbelievable" element={<UnbelievablePage />} />
+            <Route
+              path="/international-news"
+              element={<InternationalNewsPage />}
+            />
           </Routes>
+          {/* <NewsModule /> */}
+          <NewsThumbs />
         </main>
       </div>
     </Router>

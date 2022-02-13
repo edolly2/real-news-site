@@ -88,35 +88,18 @@ const NavigationPc = (props) => {
           />
         </SideBarToggle>
         <SideBarNavList>
-          <Link className="Links" exact to="/">
+          <Link className="Links active" exact to="/">
             <li>Home</li>
           </Link>
           <Link className="Links" to="/latest">
             <li>Latest News</li>
           </Link>
-          <Link className="Links" to="/politics">
-            <li>Politics</li>
-          </Link>
+
           <Link className="Links" to="/national-news">
             <li>National News</li>
           </Link>
-          <Link className="Links" to="/china">
-            <li>China News</li>
-          </Link>
-          <Link className="Links" to="/russia">
-            <li>Russia News</li>
-          </Link>
-          <Link className="Links" to="/biden">
-            <li>Biden News</li>
-          </Link>
-          <Link className="Links" to="/suppressed-news">
-            <li>Suppressed News</li>
-          </Link>
-          <Link className="Links" to="/unbelievable">
-            <li>Unbelievable News</li>
-          </Link>
-          <Link className="Links" to="/hypocrisy">
-            <li>Hypocrisy</li>
+          <Link className="Links" to="/international-news">
+            <li>International News</li>
           </Link>
           <Link className="Links" to="/fact-check">
             <li>Fact Check</li>
